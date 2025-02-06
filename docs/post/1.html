@@ -112,17 +112,17 @@ iptables -F
 apt-get purge netfilter-persistent
 输入reboot，重启服务器
 </code></pre>
+<p>2、申请SSL证书</p>
 <pre class="notranslate"><code class="notranslate"> 一键安装依赖包（可用可不用）
  Debian/Ubuntu系统：apt update -y&amp;&amp;apt install -y curl&amp;&amp;apt install -y socat
  CentOS系统：yum update -y&amp;&amp;yum install -y curl&amp;&amp;yum install -y socat
-</code></pre>
-<p>2、申请SSL证书</p>
-<pre class="notranslate"><code class="notranslate">apt update -y       # Debian/Ubuntu 命令
-apt install -y curl   # Debian/Ubuntu 命令
-apt install -y socat  # Debian/Ubuntu 命令
-yum update -y        #CentOS 命令
-yum install -y curl    #CentOS 命令
-yum install -y socat   #CentOS 命令
+
+ apt update -y       # Debian/Ubuntu 命令
+ apt install -y curl   # Debian/Ubuntu 命令
+ apt install -y socat  # Debian/Ubuntu 命令
+ yum update -y        #CentOS 命令
+ yum install -y curl    #CentOS 命令
+ yum install -y socat   #CentOS 命令
 </code></pre>
 <p>Debian 系统上，cron 是默认安装的。但是，如果您的计算机上未安装它，请使用 root 权限在终端上运行以下几个命令。</p>
 <pre class="notranslate"><code class="notranslate"> apt-get update

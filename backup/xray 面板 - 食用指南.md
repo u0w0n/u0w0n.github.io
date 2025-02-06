@@ -32,13 +32,13 @@ _**需要注意的一点是，并不是所有的服务器都支持部署。**_
  apt-get purge netfilter-persistent
  输入reboot，重启服务器
  ```
+ 2、申请SSL证书
+
 ```
  一键安装依赖包（可用可不用）
  Debian/Ubuntu系统：apt update -y&&apt install -y curl&&apt install -y socat
  CentOS系统：yum update -y&&yum install -y curl&&yum install -y socat
-```
- 2、申请SSL证书
- ```
+
  apt update -y       # Debian/Ubuntu 命令
  apt install -y curl   # Debian/Ubuntu 命令
  apt install -y socat  # Debian/Ubuntu 命令
