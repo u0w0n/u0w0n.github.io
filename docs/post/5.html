@@ -84,21 +84,25 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><p>Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 Github Api 服务，开发至今一直以为主题无人问津，近来有人问起如何食用，故忙里偷闲摸一篇简单食用文档。</p>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/115fefe58f61ee0fa1174fbbb9c1fd3dabf5df107b0449c5b7f5e709f7511a55/68747470733a2f2f706963322e7a697975616e2e77616e672f757365722f3077302f323032342f30382f77655f336338663130376631373739612e706e67"><img src="https://camo.githubusercontent.com/115fefe58f61ee0fa1174fbbb9c1fd3dabf5df107b0449c5b7f5e709f7511a55/68747470733a2f2f706963322e7a697975616e2e77616e672f757365722f3077302f323032342f30382f77655f336338663130376631373739612e706e67" alt="日昌" style="max-width: 100%;"></a></p>
 <p>相较于 Wordpress 和 Typecho 等博客框架，Aurora 主题最大的优势就是简单轻量与免费，全部使用现有开源免费服务，相对稳定，也不怕 Github 跑路（笑），文章发布与更新也是相当简单，不需要作服务器与数据库，对新人来说非常友好。</p>
 <h2>初始化环境</h2>
 <p>在食用 Aurora 主题之前，需先安装 Nodejs 和 Git 环境，这两步不必细说。环境安装完毕，由于 Aurora 使用 vue 开发，所以需要安装 。<code class="notranslate">vue-cli</code></p>
-<p>npm install -g @vue/cli-service-global<br>
-然后将主题 clone 到本地并安装依赖包：</p>
-<h1>clone 主题</h1>
-<p>git clone <a href="mailto:git@github.com">git@github.com</a>:chanshiyucx/aurora.git</p>
-<h1>进入主题目录</h1>
-<p>cd aurora</p>
-<h1>安装依赖包</h1>
-<p>npm install</p>
-<h1>本地预览</h1>
-<p>npm start<br>
-依赖包安装完毕，便可执行 本地预览效果，访问 , 当然现在看到的是我的博客，接下来需要我们自定义主题。<code class="notranslate">npm start``http://localhost:8080/</code></p>
+<pre class="notranslate"><code class="notranslate">npm install -g @vue/cli-service-global
+</code></pre>
+<p>然后将主题 clone 到本地并安装依赖包：</p>
+<pre class="notranslate"><code class="notranslate"># clone 主题
+git clone git@github.com:chanshiyucx/aurora.git
+
+# 进入主题目录
+cd aurora
+
+# 安装依赖包
+npm install
+
+# 本地预览
+npm start
+</code></pre>
+<p>依赖包安装完毕，便可执行 本地预览效果，访问 , 当然现在看到的是我的博客，接下来需要我们自定义主题。<code class="notranslate">npm start``http://localhost:8080/</code></p>
 <h2>替换站点标题和图标</h2>
 <p>首先修改站点标题和图标，替换主题目录 下的图标资源，然后修改 的站点标题和描述，同时注意修改 标题。<code class="notranslate">public/assets``public/index.html``manifest.json</code></p>
 <h2>配置主题</h2>
@@ -107,24 +111,24 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>Aurora 使用 Github api 做后台数据托管。 所以需要新建一个仓库来存放文章和一些自定义页面内容。 这里新建一个仓库取名为 Blog 为例。</p>
 <p>由于 Github api 有访问次数限制，所以需要申请 token 来解除访问限制，<a href="https://github.com/settings/tokens/new">申请地址戳这里</a>。将申请的 token 从中间随意拆成两部分填入配置项，拆分的目的避免代码提交的时候 github 对其进行检测，导致 token 失效。</p>
 <p>![添加分类](<a href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6)">https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6)</a></p>
-<p>// github 用户名<br>
-username: 'chanshiyucx',<br>
-// 仓库地址<br>
-repository: 'blog',<br>
-// token 从中间任意位置拆开成两部分，避免 github 代码检测失效<br>
-token: ['0ad1a0539c5b96fd18fa', 'aaafba9c7d1362a5746c'],</p>
+<pre class="notranslate"><code class="notranslate">// github 用户名
+username: 'chanshiyucx',
+// 仓库地址
+repository: 'blog',
+// token 从中间任意位置拆开成两部分，避免 github 代码检测失效
+token: ['0ad1a0539c5b96fd18fa', 'aaafba9c7d1362a5746c'],
+</code></pre>
 <h3>配置 Leancloud</h3>
 <p>Aurora 主题的文章阅读次数与 Valine 评论系统都是采用 <a href="https://leancloud.cn/" rel="nofollow">Leancloud</a> 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项。**然后创建三个 Class，Comment 用来存储游客评论、Counter 用来存储文章热度、Visitor 用来统计友链访问次数，注意新建时选择表的访问权限无限制。 **</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%;"></a></p>
-<p>/**</p>
-<ul>
-<li>leancloud 配置 【文章浏览次数】<br>
-*/<br>
-leancloud: {<br>
-appId: 'b6DWxsCOWuhurfp4YqbD5cDE-gzGzoHsz',<br>
-appKey: 'h564RR5uVuJV5uSeP7oFTBye'<br>
-}</li>
-</ul>
+<pre class="notranslate"><code class="notranslate">/**
+ * leancloud 配置 【文章浏览次数】
+ */
+leancloud: {
+  appId: 'b6DWxsCOWuhurfp4YqbD5cDE-gzGzoHsz',
+  appKey: 'h564RR5uVuJV5uSeP7oFTBye'
+}
+</code></pre>
 <blockquote>
 <p>LeanCloud 中国版 2019 年 10 月份后开始停止为不绑定自有域名的应用服务，所以需要将节点切换到国际版。</p>
 </blockquote>
@@ -133,30 +137,32 @@ appKey: 'h564RR5uVuJV5uSeP7oFTBye'<br>
 <p>首先需要申请 <a href="https://github.com/settings/applications/new">GitHub Application</a>，跳转地址填写你的博客域名，如果你使用 github pages 来托管你的网站，你也可以使用 域名。 最后将生成的 和 填入相应配置项。 **在开发环境调试时 Gitlak 无法展示是正常现象，发布到线上后会正常显示。 **<code class="notranslate">https://chanshiyucx.github.io``Client ID``Client Secret</code></p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%;"></a></p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%;"></a></p>
-<p>/**</p>
-<ul>
-<li>Gittalk 配置【评论功能】<br>
-*/<br>
-gitalk: {<br>
-clientID: '864b1c2cbc4e4aad9ed8',<br>
-clientSecret: '6ca16373efa03347e11a96ff92e355c5cea189bb',<br>
-repo: 'Comment', // 你的评论仓库<br>
-owner: 'chanshiyucx', // 你的 github 账户<br>
-admin: ['chanshiyucx'], // 你的 github 账户<br>
-distractionFreeMode: false // 是否开始无干扰模式【背景遮罩】<br>
-}<br>
-到此为止，所有主要的配置项皆已完成，剩下的几个配置项非常简单，相信你自己可以配置完善。</li>
-</ul>
+<pre class="notranslate"><code class="notranslate">/**
+ * Gittalk 配置【评论功能】
+ */
+gitalk: {
+  clientID: '864b1c2cbc4e4aad9ed8',
+  clientSecret: '6ca16373efa03347e11a96ff92e355c5cea189bb',
+  repo: 'Comment', // 你的评论仓库
+  owner: 'chanshiyucx', // 你的 github 账户
+  admin: ['chanshiyucx'], // 你的 github 账户
+  distractionFreeMode: false // 是否开始无干扰模式【背景遮罩】
+}
+</code></pre>
+<p>到此为止，所有主要的配置项皆已完成，剩下的几个配置项非常简单，相信你自己可以配置完善。</p>
 <h2>页面模板</h2>
 <p>为了更好地定制各个页面的展示效果，Aurora 约定一些页面格式以便内容能够正确解析。 主要约定 四个页面内容模板。 模板参考 <a href="https://github.com/chanshiyucx/blog/issues">蝉時雨の Issues</a>。<code class="notranslate">文章、书单、友链、关于</code></p>
 <h3>文章模板</h3>
 <p>文章模板没有太多的格式约束，只需要在文章正文顶部加上封面配图即可，配图采用的是 markdown 的注释语法，所以并不会在正文里渲染，以后即使你更换博客主题，也不会影响内容的展示。</p>
+<pre class="notranslate"><code class="notranslate">[pixiv: 41652582]: # "/IMAGES/bg/3.jpg"
+</code></pre>
 <p>由于博客的文章、友链、书单、关于、心情等内容都放在 issues 里，所以需要对它们进行区分，这里主要使用 与 进行分类。<code class="notranslate">issues 状态``Labels</code></p>
 <p>首先需要规定的是<strong>文章的 issues 状态都是 <code class="notranslate">open</code> 的，友链、书单、关于、心情页面的 issues 内容都是 <code class="notranslate">closed</code> 状态的</strong>。</p>
 <p>新建文章的时候 表示文章标签， 代表文章的分类，同时在文章正文顶部使用 markdown 注释来设置文章封面图，如下所示：<code class="notranslate">Labels``Milestone</code></p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%;"></a></p>
 <p>温馨提示：通过给正文图片预设尺寸可以获得更流畅的图片加载效果，尺寸设置形如 ，举个栗子：<code class="notranslate">?vw=1920&amp;vh=1080</code></p>
-<p><a href="/IMAGES/bg.png?vw=1920&amp;vh=1080">预设尺寸</a></p>
+<pre class="notranslate"><code class="notranslate">[预设尺寸](/IMAGES/bg.png?vw=1920&amp;vh=1080)
+</code></pre>
 <h3>心情模板</h3>
 <p>注意心情 issues 状态是 的，且需要打上 的 Labels，其他不做约束。<code class="notranslate">closed``Inspiration</code></p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%;"></a></p>

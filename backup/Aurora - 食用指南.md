@@ -1,18 +1,18 @@
 Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 Github Api 服务，开发至今一直以为主题无人问津，近来有人问起如何食用，故忙里偷闲摸一篇简单食用文档。
 
-![日昌](https://camo.githubusercontent.com/115fefe58f61ee0fa1174fbbb9c1fd3dabf5df107b0449c5b7f5e709f7511a55/68747470733a2f2f706963322e7a697975616e2e77616e672f757365722f3077302f323032342f30382f77655f336338663130376631373739612e706e67)
 
 相较于 Wordpress 和 Typecho 等博客框架，Aurora 主题最大的优势就是简单轻量与免费，全部使用现有开源免费服务，相对稳定，也不怕 Github 跑路（笑），文章发布与更新也是相当简单，不需要作服务器与数据库，对新人来说非常友好。
 
 ## 初始化环境
 在食用 Aurora 主题之前，需先安装 Nodejs 和 Git 环境，这两步不必细说。环境安装完毕，由于 Aurora 使用 vue 开发，所以需要安装 。`vue-cli`
- 
+ ```
  npm install -g @vue/cli-service-global
+```
  然后将主题 clone 到本地并安装依赖包：
- 
+ ```
  # clone 主题
  git clone git@github.com:chanshiyucx/aurora.git
- 
+
  # 进入主题目录
  cd aurora
  
@@ -21,6 +21,7 @@ Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 G
  
  # 本地预览
  npm start
+```
  依赖包安装完毕，便可执行 本地预览效果，访问 , 当然现在看到的是我的博客，接下来需要我们自定义主题。`npm start``http://localhost:8080/`
  
  ## 替换站点标题和图标
@@ -35,18 +36,19 @@ Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 G
  由于 Github api 有访问次数限制，所以需要申请 token 来解除访问限制，[申请地址戳这里](https://github.com/settings/tokens/new)。将申请的 token 从中间随意拆成两部分填入配置项，拆分的目的避免代码提交的时候 github 对其进行检测，导致 token 失效。
  
  ![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6)
- 
+ ```
  // github 用户名
  username: 'chanshiyucx',
  // 仓库地址
  repository: 'blog',
  // token 从中间任意位置拆开成两部分，避免 github 代码检测失效
  token: ['0ad1a0539c5b96fd18fa', 'aaafba9c7d1362a5746c'],
+```
  ### 配置 Leancloud
  Aurora 主题的文章阅读次数与 Valine 评论系统都是采用 [Leancloud](https://leancloud.cn/) 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项。**然后创建三个 Class，Comment 用来存储游客评论、Counter 用来存储文章热度、Visitor 用来统计友链访问次数，注意新建时选择表的访问权限无限制。 **
  
  ![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
- 
+ ```
  /**
   * leancloud 配置 【文章浏览次数】
   */
@@ -54,6 +56,7 @@ Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 G
    appId: 'b6DWxsCOWuhurfp4YqbD5cDE-gzGzoHsz',
    appKey: 'h564RR5uVuJV5uSeP7oFTBye'
  }
+```
  > LeanCloud 中国版 2019 年 10 月份后开始停止为不绑定自有域名的应用服务，所以需要将节点切换到国际版。
  
  ### 配置 Gitalk
@@ -64,7 +67,7 @@ Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 G
  ![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
  
  ![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
-
+```
 /**
  * Gittalk 配置【评论功能】
  */
@@ -76,6 +79,7 @@ gitalk: {
   admin: ['chanshiyucx'], // 你的 github 账户
   distractionFreeMode: false // 是否开始无干扰模式【背景遮罩】
 }
+```
 到此为止，所有主要的配置项皆已完成，剩下的几个配置项非常简单，相信你自己可以配置完善。
 
 ## 页面模板
@@ -83,8 +87,9 @@ gitalk: {
 
 ### 文章模板
 文章模板没有太多的格式约束，只需要在文章正文顶部加上封面配图即可，配图采用的是 markdown 的注释语法，所以并不会在正文里渲染，以后即使你更换博客主题，也不会影响内容的展示。
- 
+ ```
  [pixiv: 41652582]: # "/IMAGES/bg/3.jpg"
+```
  由于博客的文章、友链、书单、关于、心情等内容都放在 issues 里，所以需要对它们进行区分，这里主要使用 与 进行分类。`issues 状态``Labels`
  
  首先需要规定的是**文章的 issues 状态都是 `open` 的，友链、书单、关于、心情页面的 issues 内容都是 `closed` 状态的**。
@@ -94,8 +99,9 @@ gitalk: {
  ![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
  
  温馨提示：通过给正文图片预设尺寸可以获得更流畅的图片加载效果，尺寸设置形如 ，举个栗子：`?vw=1920&vh=1080`
- 
+ ```
  [预设尺寸](/IMAGES/bg.png?vw=1920&vh=1080)
+```
  ### 心情模板
  注意心情 issues 状态是 的，且需要打上 的 Labels，其他不做约束。`closed``Inspiration`
  
