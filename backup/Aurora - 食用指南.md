@@ -35,7 +35,7 @@ Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 G
  
  由于 Github api 有访问次数限制，所以需要申请 token 来解除访问限制，[申请地址戳这里](https://github.com/settings/tokens/new)。将申请的 token 从中间随意拆成两部分填入配置项，拆分的目的避免代码提交的时候 github 对其进行检测，导致 token 失效。
  
- ![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true）
+ ![添加分类](https://raw.githubusercontent.com/o0v0/o0v0/refs/heads/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png）
  ```
  // github 用户名
  username: 'chanshiyucx',
