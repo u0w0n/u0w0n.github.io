@@ -155,16 +155,16 @@ remote_port = 30001
 #### 上面2个端口的关系是指用168.138.163.229：30001访间你局域网192.168.0.0：5055这样解释能明白了吧。
 仅限转要 盗源有限 谢谢理解
 </code></pre>
-<h1>2.打开 DOCKER 导入镜像 snowdreamtech_frpc_latest.tar</h1>
-<h1>3.导入后选中并添加到容器</h1>
-<p>4.文件夹路径按图设置（左边为第1步你所建立文件夹的路径）右边为固定路径。</p>
+<h4>2.打开 DOCKER 导入镜像 snowdreamtech_frpc_latest.tar</h4>
+<h4>3.导入后选中并添加到容器</h4>
+<p>####4.文件夹路径按图设置（左边为第1步你所建立文件夹的路径）右边为固定路径。</p>
 <p>如果路径出现问题，那么就用这个路径<mark><strong>文件/文件夹选择你 docker 目录下的 fpc 目录</strong></mark></p>
 <p><mark><strong>这个是装载路径/etc/frp</strong></mark></p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e5a828c3d967af5c649df3e2987930145d1060b99912cb1863b47abdef9b4d09/68747470733a2f2f706963322e7a697975616e2e77616e672f757365722f3077302f323032352f30322f536e6970617374655f323032352d30322d32375f31332d34392d32315f373465623964663963353765622e706e67"><img src="https://camo.githubusercontent.com/e5a828c3d967af5c649df3e2987930145d1060b99912cb1863b47abdef9b4d09/68747470733a2f2f706963322e7a697975616e2e77616e672f757365722f3077302f323032352f30322f536e6970617374655f323032352d30322d32375f31332d34392d32315f373465623964663963353765622e706e67" alt="2" data-canonical-src="https://pic2.ziyuan.wang/user/0w0/2025/02/Snipaste_2025-02-27_13-49-21_74eb9df9c57eb.png" style="max-width: 100%;"></a></p>
-<h1>5.网络为 HOST</h1>
-<h1>6.点应用创建，并查看日志是否连接成功，一般这样显示就算成功了。</h1>
+<h5>5.网络为 HOST</h5>
+<h5>6.点应用创建，并查看日志是否连接成功，一般这样显示就算成功了。</h5>
 <p>应⽤场景举例：⽐如MP的微信通知，各个DOCKER的公⽹访问，你本地项⽬的外⽹访问，请合理使⽤，如果异常使⽤ BAN之</p>
-<h1><strong>企业微信通知</strong></h1>
+<h5><strong>企业微信通知</strong></h5>
 <p>mp在通知渠道里，将微信添加进去，相应配置填好确认应用保存即可正常使用</p>
 <h4><a href="http://%E6%9C%8D%E5%8A%A1%E7%AB%AFip" rel="nofollow">http://服务端ip</a>: 8085# 暴露服务的公网入口/api/v1/message/?token=mp的API令牌</h4>
 <p>部署完成之后，最后获得上列链接，将其填入企业微信自己创建的机器人api 接收信息里，提示成功则步署完成</p>
