@@ -97,7 +97,9 @@ remote_port = 30001
 如果路径出现问题，那么就用这个路径<mark>**文件/文件夹选择你 docker 目录下的 fpc 目录**</mark>
 
 <mark>**这个是装载路径/etc/frp**</mark>
-![](https://pic2.ziyuan.wang/user/0w0/2025/02/Snipaste_2025-02-27_13-49-21_74eb9df9c57eb.png)
+
+![2](https://pic2.ziyuan.wang/user/0w0/2025/02/Snipaste_2025-02-27_13-49-21_74eb9df9c57eb.png)
+
 # 5.网络为 HOST
 # 6.点应用创建，并查看日志是否连接成功，一般这样显示就算成功了。
 应⽤场景举例：⽐如MP的微信通知，各个DOCKER的公⽹访问，你本地项⽬的外⽹访问，请合理使⽤，如果异常使⽤ BAN之
