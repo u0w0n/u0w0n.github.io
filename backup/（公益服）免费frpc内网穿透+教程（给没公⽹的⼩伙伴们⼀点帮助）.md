@@ -5,6 +5,7 @@
 以下操作，我使用1panel完成
 
 选装系统，安装docker，然后使用docker 部署容器
+使用 ssh连接你的云服务器，输入下列两个容器命令，任选一个
 ~~~
 # docker run：部署创建容器
 docker run -d \
