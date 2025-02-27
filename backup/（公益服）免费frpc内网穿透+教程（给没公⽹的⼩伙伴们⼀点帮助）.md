@@ -92,14 +92,14 @@ remote_port = 30001
 
 #### 2.打开 DOCKER 导入镜像 snowdreamtech_frpc_latest.tar
 #### 3.导入后选中并添加到容器
-####4.文件夹路径按图设置（左边为第1步你所建立文件夹的路径）右边为固定路径。
+#### 4.文件夹路径按图设置（左边为第1步你所建立文件夹的路径）右边为固定路径。
 
 如果路径出现问题，那么就用这个路径<mark>**文件/文件夹选择你 docker 目录下的 fpc 目录**</mark>
 
 <mark>**这个是装载路径/etc/frp**</mark>
 
 
-![2](https://pic2.ziyuan.wang/user/0w0/2025/02/Snipaste_2025-02-27_13-49-21_74eb9df9c57eb.png)
+![](https://pic2.ziyuan.wang/user/0w0/2025/02/Snipaste_2025-02-27_13-49-21_74eb9df9c57eb.png)
 
 
 ##### 5.网络为 HOST
