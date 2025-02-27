@@ -99,7 +99,7 @@ remote_port = 30001
 <mark>**这个是装载路径/etc/frp**</mark>
 
 
-![](https://pic2.ziyuan.wang/user/0w0/2025/02/Snipaste_2025-02-27_13-49-21_74eb9df9c57eb.png)
+[展示目录](https://pic2.ziyuan.wang/user/0w0/2025/02/Snipaste_2025-02-27_13-49-21_74eb9df9c57eb.png)
 
 
 ##### 5.网络为 HOST
