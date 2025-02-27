@@ -87,20 +87,23 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <hr>
 <p>以下操作，我使用1panel完成</p>
 <p>选装系统，安装docker，然后使用docker 部署容器</p>
-<h1>docker run：部署创建容器</h1>
-<p>docker run -d <br>
-     --name wxchat <br>
-     --restart=always <br>
-     -p 42021:80 <br>
-     ddsderek/wxchat:latest</p>
-<h1>docker compose:部署创建容器</h1>
-<p>version: '3.3'services:<br>
-    wxchat:<br>
-        container_name: wxchat<br>
-        restart: always<br>
-        ports:<br>
-            - '9980:80'-<br>
-        image: 'ddsderek/wxchat:latest'</p>
+<pre class="notranslate"><code class="notranslate"># docker run：部署创建容器
+docker run -d \
+     --name wxchat \
+     --restart=always \
+     -p 42021:80 \
+     ddsderek/wxchat:latest
+
+# docker compose:部署创建容器
+
+version: '3.3'services:
+    wxchat:
+        container_name: wxchat
+        restart: always
+        ports:
+            - '9980:80'-
+        image: 'ddsderek/wxchat:latest'
+</code></pre>
 <p>部署完成后使用上面 docker 部署的端口     </p>
 <p>42021 \ 9980</p>
 <p><mark>使用服务器 IP 加上面端口，即可查看是否部署完成</mark></p>

@@ -5,7 +5,7 @@
 以下操作，我使用1panel完成
 
 选装系统，安装docker，然后使用docker 部署容器
-
+~~~
 # docker run：部署创建容器
 docker run -d \
      --name wxchat \
@@ -22,7 +22,7 @@ version: '3.3'services:
         ports:
             - '9980:80'-
         image: 'ddsderek/wxchat:latest'
-
+~~~
 部署完成后使用上面 docker 部署的端口     
 
 42021 \ 9980
