@@ -64,10 +64,14 @@ auth.token = "token123456"
 
 [[proxies]]
 name = "test-http"
-type = "tcp" # 不用改
-localIP = "127.0.0.1" # 需要暴露的服务的IP(如果使用的是 host 模式，就不用改)
-localPort = 3000  # mp的端口
-remotePort = 8085# 自己改的暴露服务的公网入口
+type = "tcp" 
+#### 不用改这个是通信协议
+localIP = "127.0.0.1" 
+#### 需要暴露的服务的IP(如果使用的是 host 模式，就不用改)这个暴露的 IP 是你的及空间NAS的 IP
+localPort = 3000  
+#### 你的 docker 服务的mp的端口
+remotePort = 8085
+#### 自己改一个的暴露服务的公网入口
 ~~~
 下列为参考项
 ~~~

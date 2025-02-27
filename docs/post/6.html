@@ -132,10 +132,14 @@ auth.<span class="pl-c1">token</span> <span class="pl-c1">=</span> <span class="
 
 [[<span class="pl-c1">proxies</span>]]
 name <span class="pl-c1">=</span> <span class="pl-s">"test-http"</span>
-<span class="pl-ent">type</span> <span class="pl-c1">=</span> <span class="pl-s">"tcp"</span> <span class="pl-kos">#</span> 不用改
-localIP <span class="pl-c1">=</span> <span class="pl-s">"127.0.0.1"</span> <span class="pl-kos">#</span> 需要暴露的服务的IP(如果使用的是 <span class="pl-c1">host</span> 模式，就不用改)
-localP<span class="pl-c1">or</span>t <span class="pl-c1">=</span> 3000  <span class="pl-kos">#</span> <span class="pl-c1">mp</span>的端口
-remoteP<span class="pl-c1">or</span>t <span class="pl-c1">=</span> 8085<span class="pl-kos">#</span> 自己改的暴露服务的公网入口</pre></div>
+<span class="pl-ent">type</span> <span class="pl-c1">=</span> <span class="pl-s">"tcp"</span> 
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 不用改这个是通信协议
+localIP <span class="pl-c1">=</span> <span class="pl-s">"127.0.0.1"</span> 
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 需要暴露的服务的IP(如果使用的是 <span class="pl-c1">host</span> 模式，就不用改)这个暴露的 IP 是你的及空间NAS的 IP
+localP<span class="pl-c1">or</span>t <span class="pl-c1">=</span> 3000  
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 你的 docker 服务的mp的端口
+remoteP<span class="pl-c1">or</span>t <span class="pl-c1">=</span> 8085
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 自己改一个的暴露服务的公网入口</pre></div>
 <p>下列为参考项</p>
 <pre class="notranslate"><code class="notranslate">[common]
 server_addr=168.138.163.229
