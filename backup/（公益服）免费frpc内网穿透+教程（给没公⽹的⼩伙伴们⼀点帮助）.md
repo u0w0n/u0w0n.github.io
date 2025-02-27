@@ -55,7 +55,7 @@ version: '3.3'services:
 transport.tls.enable = true 
 #### 从 v0.50.0版本开始，transport.tls.enable的默认值为 true
 serverAddr = "47.239.143.139" 
-####云服务器ip
+#### 云服务器ip
 serverPort = 7000 
 #### 公网云服务器端通信端口
 
