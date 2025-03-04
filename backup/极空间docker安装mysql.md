@@ -1,3 +1,4 @@
+![](https://raw.githubusercontent.com/u0w0n/u0w0n/refs/heads/main/%E5%9B%BE%E5%BA%8A/w.png)
 既然装了mysql当然需要一个图形管理系统，不然总是在ssh上敲代码很麻烦。
 分别是mysql5.7.44数据库， adminer图形管理
 mysql选择5.7是因为，高版本容易踩坑，5.7版本教程多，大部分都适配，不需要额外设置什么。
