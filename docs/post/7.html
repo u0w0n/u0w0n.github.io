@@ -93,38 +93,17 @@ mysql选择5.7是因为，高版本容易踩坑，5.7版本教程多，大部分
 <pre class="notranslate"><code class="notranslate">docker pull mysql:5.7.44
 docker pull adminer:latest
 </code></pre>
-<p><strong>在极空间中</strong></p>
-<ul>
-<li>
-<p>选择 镜像 - 仓库 - 自定义拉取  - mysql:5.7.44 adminer:latest</p>
-</li>
-<li></li>
-<li>
+<p><strong>在极空间中</strong><br>
+选择 镜像 - 仓库 - 自定义拉取  - mysql:5.7.44 adminer:latest</p>
 <p>同理 自定义拉取 - docker pull adminer:latest<br>
 <strong>部署mysql容器</strong></p>
-</li>
-<li>
 <p>在本地镜像中选择 mysql 点击 部署到容器</p>
-</li>
-<li>
 <p>给容器命名并勾选 极空间开机后自动启动此容器</p>
-</li>
-<li>
 <p>选择文件夹路径，随便选个你喜欢的文件夹（当你后面需要修改数据库文件的时候，推荐不要直接拿这里面文件动手，容易出错。特别是不要手动删除数据库文件。强烈推荐使用接口+管理面板来管理数据库，比如：Adminer图形化管理面板）</p>
-</li>
-<li>
 <p>打开端口列表并将3306转发到3306，33060转发到33060。</p>
-</li>
-<li>
 <p>添加一行环境变量 MYSQL_ROOT_PASSWORD 并将值设置为你的密码。这一条是root账户的密码，如果不设置会无法启动容器无限重启。</p>
-</li>
-<li>
 <p>勾选 -it 选项，（我发现不勾好像也不影响使用但还是推荐勾上吧，保险起见。）</p>
-</li>
-<li>
 <p>把容器权限全打开（同样是保险起见，除了监控类型的别的还是都打开吧，不然总是出些幺蛾子毛病）</p>
-</li>
-</ul>
 <h3>部署adminer容器</h3>
 <ul>
 <li>
