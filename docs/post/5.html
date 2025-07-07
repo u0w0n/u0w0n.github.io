@@ -120,7 +120,7 @@ token: ['0ad1a0539c5b96fd18fa', 'aaafba9c7d1362a5746c'],
 </code></pre>
 <h3>配置 Leancloud</h3>
 <p>Aurora 主题的文章阅读次数与 Valine 评论系统都是采用 <a href="https://leancloud.cn/" rel="nofollow">Leancloud</a> 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项。**然后创建三个 Class，Comment 用来存储游客评论、Counter 用来存储文章热度、Visitor 用来统计友链访问次数，注意新建时选择表的访问权限无限制。 **</p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%; height: auto;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%;"></a></p>
 <pre class="notranslate"><code class="notranslate">/**
  * leancloud 配置 【文章浏览次数】
  */
@@ -135,8 +135,8 @@ leancloud: {
 <h3>配置 Gitalk</h3>
 <p>Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。 其原理的文章存储是一样的，详细介绍见<a href="https://github.com/gitalk/gitalk/blob/master/readme-cn.md">官方文档</a>。</p>
 <p>首先需要申请 <a href="https://github.com/settings/applications/new">GitHub Application</a>，跳转地址填写你的博客域名，如果你使用 github pages 来托管你的网站，你也可以使用 域名。 最后将生成的 和 填入相应配置项。 **在开发环境调试时 Gitlak 无法展示是正常现象，发布到线上后会正常显示。 **<code class="notranslate">https://chanshiyucx.github.io``Client ID``Client Secret</code></p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%; height: auto;"></a></p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%; height: auto;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%;"></a></p>
 <pre class="notranslate"><code class="notranslate">/**
  * Gittalk 配置【评论功能】
  */
@@ -159,13 +159,13 @@ gitalk: {
 <p>由于博客的文章、友链、书单、关于、心情等内容都放在 issues 里，所以需要对它们进行区分，这里主要使用 与 进行分类。<code class="notranslate">issues 状态``Labels</code></p>
 <p>首先需要规定的是<strong>文章的 issues 状态都是 <code class="notranslate">open</code> 的，友链、书单、关于、心情页面的 issues 内容都是 <code class="notranslate">closed</code> 状态的</strong>。</p>
 <p>新建文章的时候 表示文章标签， 代表文章的分类，同时在文章正文顶部使用 markdown 注释来设置文章封面图，如下所示：<code class="notranslate">Labels``Milestone</code></p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%; height: auto;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%;"></a></p>
 <p>温馨提示：通过给正文图片预设尺寸可以获得更流畅的图片加载效果，尺寸设置形如 ，举个栗子：<code class="notranslate">?vw=1920&amp;vh=1080</code></p>
 <pre class="notranslate"><code class="notranslate">[预设尺寸](/IMAGES/bg.png?vw=1920&amp;vh=1080)
 </code></pre>
 <h3>心情模板</h3>
 <p>注意心情 issues 状态是 的，且需要打上 的 Labels，其他不做约束。<code class="notranslate">closed``Inspiration</code></p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%; height: auto;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%;"></a></p>
 <h3>友链模板</h3>
 <p>友链页面使用空行做分割，内容示例如下：</p>
 <pre class="notranslate"><code class="notranslate">## 阁子
@@ -191,7 +191,7 @@ description: 柏林已经来了命令，阿尔萨斯和洛林的学校只许教 
 <h3>关于模板</h3>
 <p>关于页面以 拆分，其他不做约束。<code class="notranslate">## 段落</code></p>
 <h3>添加分类</h3>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%; height: auto;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true"><img src="https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true" alt="添加分类" style="max-width: 100%;"></a></p>
 <h2>部署</h2>
 <p>Aurora 2.0 添加一键部署功能，只需要编辑 ，配置自己的仓库和域名，之后命令行执行 ，即可自动打包并上传到指定仓库，将该仓库开启 功能即可在线访问。相关文档参考<a href="https://cli.vuejs.org/zh/guide/deployment.html#now" rel="nofollow">自动部署</a>。<code class="notranslate">build.sh``./build.sh``Github Pages</code></p>
 <p>尽情享受吧💦</p></div>
