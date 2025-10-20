@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://blog.冬菇.cn/post/6.html">
 <meta property="og:image" content="https://al.donggu.me:12138/d/%E5%9B%BE%E7%89%87/gif/DownloadPicture/we_1738847656219.gif?sign=PswLCMw9NGuGyE1KdINBKYQkY6ikfJ6gpEXW1gXDS8Y=:0">
 <title>（公益服）免费frpc内网穿透+教程（给没公⽹的⼩伙伴们⼀点帮助）</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -119,28 +119,27 @@ version: '3.3'services:
 <p>1.先在本地你放 docker 文件的地方新建个 frpc 文件夹,然后打开frpc.toml 文件，并修改其中内容与你实际情况匹配 ，随后放⼊⽂件夹。</p>
 <p>在nas部署一个frpc的docker 容器，在 docker 容器目录里创建下列frpc.toml文件并将目录映射到docker目录里创建即可</p>
 <p>需要注意的一点是根据下列提示，修改自己的配置信息</p>
-<pre lang="css" class="notranslate"><code class="notranslate">#### frpc.toml文件
-transport.tls.enable = true 
-#### 从 v0.50.0版本开始，transport.tls.enable的默认值为 true
-serverAddr = "47.239.143.139" 
-#### 云服务器ip
-serverPort = 7000 
-#### 公网云服务器端通信端口
+<div class="highlight highlight-source-css"><pre class="notranslate"><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> <span class="pl-c1">frpc</span>.<span class="pl-c1">toml</span>文件
+transp<span class="pl-c1">or</span>t.<span class="pl-c1">tls</span>.<span class="pl-c1">enable</span> <span class="pl-c1">=</span> true 
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 从 v0.50.0版本开始，transp<span class="pl-c1">or</span>t.<span class="pl-c1">tls</span>.<span class="pl-c1">enable</span>的默认值为 true
+serverAddr <span class="pl-c1">=</span> <span class="pl-s">"47.239.143.139"</span> 
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 云服务器ip
+serverP<span class="pl-c1">or</span>t <span class="pl-c1">=</span> 7000 
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 公网云服务器端通信端口
 
-auth.token = "token123456" 
-#### 1panel的参数token令牌，与公网服务端保持一致
+auth.<span class="pl-c1">token</span> <span class="pl-c1">=</span> <span class="pl-s">"token123456"</span> 
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 1panel的参数<span class="pl-k">to</span>ken令牌，与公网服务端保持一致
 
-[[proxies]]
-name = "test-http"
-type = "tcp" 
-#### 不用改这个是通信协议
-localIP = "127.0.0.1" 
-#### 需要暴露的服务的IP(如果使用的是 host 模式，就不用改)这个暴露的 IP 是你的及空间NAS的 IP
-localPort = 3000  
-#### 你的 docker 服务的mp的端口
-remotePort = 8085
-#### 自己改一个的暴露服务的公网入口
-</code></pre>
+[[<span class="pl-c1">proxies</span>]]
+name <span class="pl-c1">=</span> <span class="pl-s">"test-http"</span>
+<span class="pl-ent">type</span> <span class="pl-c1">=</span> <span class="pl-s">"tcp"</span> 
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 不用改这个是通信协议
+localIP <span class="pl-c1">=</span> <span class="pl-s">"127.0.0.1"</span> 
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 需要暴露的服务的IP(如果使用的是 <span class="pl-c1">host</span> 模式，就不用改)这个暴露的 IP 是你的及空间NAS的 IP
+localP<span class="pl-c1">or</span>t <span class="pl-c1">=</span> 3000  
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 你的 docker 服务的mp的端口
+remoteP<span class="pl-c1">or</span>t <span class="pl-c1">=</span> 8085
+<span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span><span class="pl-kos">#</span> 自己改一个的暴露服务的公网入口</pre></div>
 <p>下列为参考项</p>
 <pre class="notranslate"><code class="notranslate">[common]
 server_addr=168.138.163.229
