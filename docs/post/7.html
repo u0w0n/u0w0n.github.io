@@ -104,7 +104,7 @@ mysql选择5.7是因为，高版本容易踩坑，5.7版本教程多，大部分
 </blockquote>
 <h3>拉取镜像</h3>
 <div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p><code class="notranslate">docker pull joyqi/typecho:1.2.1-php7.4-apache</code><br>
-<code class="notranslate">docker pull mysql:5.7.44</code><br>
+<code class="notranslate"> docker pull mysql:5.7.44</code><br>
 <code class="notranslate">docker pull adminer:latest</code></p>
 </div>
 <blockquote>
@@ -154,10 +154,7 @@ mysql选择5.7是因为，高版本容易踩坑，5.7版本教程多，大部分
 <a href="https://github.com/anuraghazra/github-readme-stats">
     <img height="500" src="https://camo.githubusercontent.com/e69480a3019da98b419f98ac1ffe941fd4f07f8e6ffe552e5ac9007480917109/68747470733a2f2f706963322e7a697975616e2e77616e672f757365722f3077302f323032352f31302f536e6970617374655f323032352d31302d32375f31312d35342d34325f326162636365306466643162662e706e67" alt="" data-canonical-src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_11-54-42_2abcce0dfd1bf.png" style="max-width: 100%; height: auto; max-height: 500px;">
 </a></p>
-<blockquote>
-<p>[!IMPORTANT]</p>
-</blockquote>
-<h3>部署adminer容器</h3>
+<h4>部署adminer容器</h4>
 <p>这个部署不需要改太多，绑定端口后将权限全打开就行<br>
 选择本地镜像adminer后点部署，8080端口绑定的本地端口设置为 3305<br>
 打开全部权限，同mysql。<br>
@@ -177,7 +174,7 @@ mysql选择5.7是因为，高版本容易踩坑，5.7版本教程多，大部分
 用户名是root，<br>
 密码是上面部署mysql的时候，环境变量里添加的那个。<br>
 数据库可以不填，勾上保持登陆，点登陆。</p>
-<h3>通过adminer图形管理面板新建数据库</h3>
+<h4>通过adminer图形管理面板新建数据库</h4>
 <p>进入adminer后台，在选择数据库的下方，点击 创建数据库 ，然后数据库名填写 typecho ，类型选校对即可，点击保存。</p>
 <p align="center">
 <a href="https://github.com/anuraghazra/github-readme-stats">
@@ -187,7 +184,7 @@ mysql选择5.7是因为，高版本容易踩坑，5.7版本教程多，大部分
 新建方式：返回数据库列表 - 选择刚刚新建的typecho数据库 - 点击上方‘权限’ - 点击创建用户<br>
 创建完成后需要勾选权限才可使用。<br>
 总之我比较懒，而且数据库只有我自己用，所以我就不新建用户了，直接用root来。</p>
-<h3>未安装adminer新建数据库的方式</h3>
+<h4>未安装adminer新建数据库的方式</h4>
 <p>选择mysql容器，点击ssh按钮，然后点连接。</p>
 <p align="center">
 <a href="https://github.com/anuraghazra/github-readme-stats">

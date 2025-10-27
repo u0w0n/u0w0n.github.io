@@ -20,7 +20,7 @@
 ### 拉取镜像
 > [!IMPORTANT]
  `docker pull joyqi/typecho:1.2.1-php7.4-apache`
-`docker pull mysql:5.7.44`
+` docker pull mysql:5.7.44`
 `docker pull adminer:latest`
 
 > 在极空间中
@@ -85,8 +85,7 @@
     <img height=500 src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_11-54-42_2abcce0dfd1bf.png"  alt=""/>
 </a></p>
 
-> [!IMPORTANT]
-### 部署adminer容器
+#### 部署adminer容器
 这个部署不需要改太多，绑定端口后将权限全打开就行
 选择本地镜像adminer后点部署，8080端口绑定的本地端口设置为 3305
 打开全部权限，同mysql。
@@ -110,7 +109,8 @@
 用户名是root，
 密码是上面部署mysql的时候，环境变量里添加的那个。
 数据库可以不填，勾上保持登陆，点登陆。
-### 通过adminer图形管理面板新建数据库
+
+#### 通过adminer图形管理面板新建数据库
 进入adminer后台，在选择数据库的下方，点击 创建数据库 ，然后数据库名填写 typecho ，类型选校对即可，点击保存。
 
 <p align="center">
@@ -123,7 +123,7 @@
 创建完成后需要勾选权限才可使用。
 总之我比较懒，而且数据库只有我自己用，所以我就不新建用户了，直接用root来。
 
-### 未安装adminer新建数据库的方式
+#### 未安装adminer新建数据库的方式
 选择mysql容器，点击ssh按钮，然后点连接。
 
 <p align="center">
