@@ -1,3 +1,5 @@
+<!-- ##{"script":"<script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>"}## -->
+
 #### 小白也能轻松搞定的极空间docker安装/数据库与博客
  **拉取镜像提示**
 > 推荐使用1.2.1 php7.4版本，其他版本，主题适配较少，不推荐使用，
@@ -198,5 +200,3 @@ typecho部署就容易很多，大部分和mysql差不多。第一次部署typec
 >  整体还是挺简单的，一共就4大步
 >  部署数据库，部署博客
 >  再往后就是添加插件和主题了，这部分自行研究或者后面我会分享一些主题或插件推荐。
-
-<!-- ##{"script":"<script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>"}## -->
