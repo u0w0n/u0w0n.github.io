@@ -1,3 +1,5 @@
+<!-- ##{"script":"<script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>"}## -->
+
 Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 Github Api 服务，开发至今一直以为主题无人问津，近来有人问起如何食用，故忙里偷闲摸一篇简单食用文档。
 
 
@@ -35,8 +37,7 @@ Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 G
  
  由于 Github api 有访问次数限制，所以需要申请 token 来解除访问限制，[申请地址戳这里](https://github.com/settings/tokens/new)。将申请的 token 从中间随意拆成两部分填入配置项，拆分的目的避免代码提交的时候 github 对其进行检测，导致 token 失效。
  
-![分类](https://raw.githubusercontent.com/o0v0/o0v0/refs/heads/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true）
-
+![分类](https://raw.githubusercontent.com/o0v0/o0v0/refs/heads/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
  ```
  // github 用户名
  username: 'chanshiyucx',
