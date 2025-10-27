@@ -18,9 +18,9 @@
 
 ### 拉取镜像
 > [!IMPORTANT]
- `docker pull joyqi/typecho:1.2.1-php7.4-apache`
-` docker pull mysql:5.7.44`
-`docker pull adminer:latest`
+` docker pull joyqi/typecho:1.2.1-php7.4-apache
+` docker pull mysql:5.7.44
+` docker pull adminer:latest
 
 > 在极空间中
 > 选择 镜像 - 仓库 - 自定义拉取 - joyqi/typecho:1.2.1-php7.4-apache
