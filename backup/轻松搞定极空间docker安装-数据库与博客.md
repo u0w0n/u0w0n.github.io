@@ -145,7 +145,7 @@ typecho部署就容易很多，大部分和mysql差不多。第一次部署typec
 
 <p align="center">
 <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img height=500 src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_12-30-40_80c5436981497.png"  alt=""/>
+    <img height=1000 src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_12-30-40_80c5436981497.png"  alt=""/>
 </a></p>
 
 这里的博客端口我设置的是9040，忘了为啥是这个了，好像是以前部署的时候看的哪一篇教程就是这个，那会儿太萌新了，怕操作错了，完全照着
