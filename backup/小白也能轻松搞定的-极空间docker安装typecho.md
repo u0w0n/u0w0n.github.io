@@ -36,19 +36,33 @@
 
 ### 部署mysql容器
 在本地镜像中选择 mysql 点击 部署到容器
-<a href=""><img align="right" alt="Github stats" src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_11-53-53_e32b5820d7db9.png"/></a>
+<p align="center">
+
+![](https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_11-53-53_e32b5820d7db9.png)
+</a></p>
 给容器命名并勾选 极空间开机后自动启动此容器
+
 <a href=""><img align="right" alt="Github stats" src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_11-54-04_81fb27456474f.png"/></a>
+
 选择文件夹路径，随便选个你喜欢的文件夹，
 （当你后面需要修改数据库文件的时候，推荐不要直接拿这里面文件动手，容易出错。特别是不要手动删除数据库文件。强烈推荐使用接口+管理面板来管理数据库，比如：Adminer图形化管理面板）
+
 <a href=""><img align="right" alt="Github stats" src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_11-54-15_d2253e64b61c3.png"/></a>
+
 打开端口列表并将3306转发到3306，33060转发到33060。
+
 <a href=""><img align="right" alt="Github stats" src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_11-54-23_4d32c2e9783d1.png"/></a>
+
 添加一行环境变量 MYSQL_ROOT_PASSWORD 并将值设置为你的密码。这一条是root账户的密码，如果不设置会无法启动容器无限重启。
+
 <a href=""><img align="right" alt="Github stats" src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_11-54-30_f9d3c38e97539.png"/></a>
+
 勾选 -it 选项，（我发现不勾好像也不影响使用但还是推荐勾上吧，保险起见。）
+
 <a href=""><img align="right" alt="Github stats" src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_11-54-37_84360d3533740.png"/></a>
+
 把容器权限全打开（同样是保险起见，除了监控类型的别的还是都打开吧，不然总是出些幺蛾子毛病）
+
 <a href=""><img align="right" alt="Github stats" src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_11-54-42_2abcce0dfd1bf.png"/></a>
 
 > [!IMPORTANT]
@@ -57,10 +71,14 @@
 选择本地镜像adminer后点部署，8080端口绑定的本地端口设置为 3305
 打开全部权限，同mysql。
 点击部署。
+
 <a href=""><img align="right" alt="Github stats" src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_12-03-11_cd284bfa5d07f.png"/></a>
+
 进入浏览器，打开 http://你的极空间局域网ip:3305 示例： http://192.168.0.103:3305/
 进入后可以看到如下
+
 <a href=""><img align="right" alt="Github stats" src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_12-03-16_8e9652c7588c9.png"/></a>
+
 系统选择mysql
 服务器输入你的极空间地址+端口3306,这个输入的是mysql的服务器，也就是刚才部署的mysql容器的端口。
 用户名是root，
@@ -68,7 +86,9 @@
 数据库可以不填，勾上保持登陆，点登陆。
 ### 通过adminer图形管理面板新建数据库
 进入adminer后台，在选择数据库的下方，点击 创建数据库 ，然后数据库名填写 typecho ，类型选校对即可，点击保存。
+
 <a href=""><img align="right" alt="Github stats" src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_12-03-24_c195a1cf5f6eb.png"/></a>
+
 可以选择在typecho数据库新建一个用户，也可以不新建用户直接使用root管理员用户。
 新建方式：返回数据库列表 - 选择刚刚新建的typecho数据库 - 点击上方‘权限’ - 点击创建用户
 创建完成后需要勾选权限才可使用。
@@ -76,7 +96,9 @@
 
 ### 未安装adminer新建数据库的方式
 选择mysql容器，点击ssh按钮，然后点连接。
+
 <a href=""><img align="right" alt="Github stats" src="https://pic2.ziyuan.wang/user/0w0/2025/10/Snipaste_2025-10-27_12-08-53_841c41e551be0.png"/></a>
+
 后台输入 mysql -u root -p 然后回车
 回车后，输入第一步里mysql环境变量设置的密码，然后再回车，登陆进mysql。
 输入 CREATE DATABASE typecho; 回车， 新建数据库，
