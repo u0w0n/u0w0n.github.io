@@ -89,6 +89,7 @@ Alex是1.8正式版更新的女角色，也是PE版0.11.0测试版的女角色�
 
 以上所有基础打包文件完成，后续操作在面板进行。
 ![安装文件](https://github.com/u0w0n/blog/blob/main/mcsm/foreg3.png?raw=true)
+![内存改为8g](https://github.com/u0w0n/blog/blob/main/mcsm/foreg4.png?raw=true)
 
 ### mscm第一次进入面板
 
