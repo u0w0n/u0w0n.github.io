@@ -1,150 +1,147 @@
-<!-- ##{"script":"<script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>"}## -->
+因为我的设备是极空间z4pro，所以所有操作都在这个设备上进行。
 
-Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 Github Api 服务，开发至今一直以为主题无人问津，近来有人问起如何食用，故忙里偷闲摸一篇简单食用文档。
+### 《我的世界》（Minecraft）是一款由Mojang Studios开发的沙盒类电子游戏，玩家可以在一个由方块构成的三维世界中自由创造和探索。
+### 游戏概述
+《我的世界》是一款开放世界的沙盒游戏，玩家在游戏中可以自由地创造和破坏各种方块，构建建筑、艺术作品，或进行探险。游戏没有固定的目标，玩家可以选择单人模式或多人模式进行游戏。自2009年首次发布以来，该游戏已经成为全球最畅销的电子游戏之一，销量超过亿份。 
+### 玩法特点
+
+- 创造与破坏：玩家可以在游戏中收集资源，合成工具和物品，建造各种结构。游戏的核心玩法围绕着方块的放置和破坏。
+- 多样的游戏模式：包括生存模式、创造模式和冒险模式等。生存模式中，玩家需要收集资源以生存，而创造模式则允许玩家无限- 制地使用资源进行建造。
+- 探索与冒险：玩家可以探索不同的维度，如“下界”和“末地”，并与敌对生物战斗，完成各种挑战。
+
+### 角色描述
+**史蒂夫**
+史蒂夫是第一个用户操作的角色。曾经在第二个测试版本以及往后的几个版本中出现，在当时Steve被称作人类，只能以接近抽搐的方式在游戏中奔跑。默认玩家称作“Steve”（因为“Steve”这个名字不是它真正的名字，所以Notch在后面加了一个问号）。预设玩家的皮肤拥有棕色头发和蓝紫色眼睛（早期留有山羊胡），身穿蓝色衬衫，一条牛仔裤以及灰黑色的鞋。XBox360以及PE版的玩家可能拥有不同的皮肤。
+**Alex**
+Alex是1.8正式版更新的女角色，也是PE版0.11.0测试版的女角色。观察她的正面通过金发辫子可判断性别为女性，观察她的背面会发现手臂体形偏小。正版用户可自行在史蒂夫与艾利克斯之中选择一个角色。1.8后非正版启动用户默认为Alex。Alex的音译各有不一，在此以亚历克斯为普遍译法，此外还有音译爱丽克丝等。
 
 
-相较于 Wordpress 和 Typecho 等博客框架，Aurora 主题最大的优势就是简单轻量与免费，全部使用现有开源免费服务，相对稳定，也不怕 Github 跑路（笑），文章发布与更新也是相当简单，不需要作服务器与数据库，对新人来说非常友好。
+------------------------------
 
-## 初始化环境
-在食用 Aurora 主题之前，需先安装 Nodejs 和 Git 环境，这两步不必细说。环境安装完毕，由于 Aurora 使用 vue 开发，所以需要安装 。`vue-cli`
- ```
- npm install -g @vue/cli-service-global
-```
- 然后将主题 clone 到本地并安装依赖包：
- ```
- # clone 主题
- git clone git@github.com:chanshiyucx/aurora.git
+### MCSManager 是什么？
 
- # 进入主题目录
- cd aurora
- 
- # 安装依赖包
- npm install
- 
- # 本地预览
- npm start
-```
- 依赖包安装完毕，便可执行 本地预览效果，访问 , 当然现在看到的是我的博客，接下来需要我们自定义主题。`npm start``http://localhost:8080/`
- 
- ## 替换站点标题和图标
- 首先修改站点标题和图标，替换主题目录 下的图标资源，然后修改 的站点标题和描述，同时注意修改 标题。`public/assets``public/index.html``manifest.json`
- 
- ## 配置主题
- 主题配置文件为根目录下 ，里面每个配置项皆有详细注释，这里对一些基本配置项做简要说明。`src/config.js`
- 
- ### 配置文章仓库
- Aurora 使用 Github api 做后台数据托管。 所以需要新建一个仓库来存放文章和一些自定义页面内容。 这里新建一个仓库取名为 Blog 为例。
- 
- 由于 Github api 有访问次数限制，所以需要申请 token 来解除访问限制，[申请地址戳这里](https://github.com/settings/tokens/new)。将申请的 token 从中间随意拆成两部分填入配置项，拆分的目的避免代码提交的时候 github 对其进行检测，导致 token 失效。
- 
-![分类](https://raw.githubusercontent.com/o0v0/o0v0/refs/heads/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
- ```
- // github 用户名
- username: 'chanshiyucx',
- // 仓库地址
- repository: 'blog',
- // token 从中间任意位置拆开成两部分，避免 github 代码检测失效
- token: ['0ad1a0539c5b96fd18fa', 'aaafba9c7d1362a5746c'],
-```
- ### 配置 Leancloud
- Aurora 主题的文章阅读次数与 Valine 评论系统都是采用 [Leancloud](https://leancloud.cn/) 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项。**然后创建三个 Class，Comment 用来存储游客评论、Counter 用来存储文章热度、Visitor 用来统计友链访问次数，注意新建时选择表的访问权限无限制。 **
- 
-![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
- ```
- /**
-  * leancloud 配置 【文章浏览次数】
-  */
- leancloud: {
-   appId: 'b6DWxsCOWuhurfp4YqbD5cDE-gzGzoHsz',
-   appKey: 'h564RR5uVuJV5uSeP7oFTBye'
- }
-```
- > LeanCloud 中国版 2019 年 10 月份后开始停止为不绑定自有域名的应用服务，所以需要将节点切换到国际版。
- 
- ### 配置 Gitalk
- Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。 其原理的文章存储是一样的，详细介绍见[官方文档](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)。
- 
- 首先需要申请 [GitHub Application](https://github.com/settings/applications/new)，跳转地址填写你的博客域名，如果你使用 github pages 来托管你的网站，你也可以使用 域名。 最后将生成的 和 填入相应配置项。 **在开发环境调试时 Gitlak 无法展示是正常现象，发布到线上后会正常显示。 **`https://chanshiyucx.github.io``Client ID``Client Secret`
- 
- ![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
- 
- ![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
-```
-/**
- * Gittalk 配置【评论功能】
- */
-gitalk: {
-  clientID: '864b1c2cbc4e4aad9ed8',
-  clientSecret: '6ca16373efa03347e11a96ff92e355c5cea189bb',
-  repo: 'Comment', // 你的评论仓库
-  owner: 'chanshiyucx', // 你的 github 账户
-  admin: ['chanshiyucx'], // 你的 github 账户
-  distractionFreeMode: false // 是否开始无干扰模式【背景遮罩】
-}
-```
-到此为止，所有主要的配置项皆已完成，剩下的几个配置项非常简单，相信你自己可以配置完善。
+**MCSManager** 是一款开源，分布式，一键部署，支持 Minecraft 和 Steam 游戏服务器 的控制面板。
 
-## 页面模板
-为了更好地定制各个页面的展示效果，Aurora 约定一些页面格式以便内容能够正确解析。 主要约定 四个页面内容模板。 模板参考 [蝉時雨の Issues](https://github.com/chanshiyucx/blog/issues)。`文章、书单、友链、关于`
+**MCSManager** 在 Minecraft 和 其他游戏 社区内中已有一定的流行程度，它可以帮助你集中管理多个物理服务器，动态在任何主机上创建游戏服务端，并且提供安全可靠的多用户权限系统，可以很轻松的帮助你管理多个服务器。
 
-### 文章模板
-文章模板没有太多的格式约束，只需要在文章正文顶部加上封面配图即可，配图采用的是 markdown 的注释语法，所以并不会在正文里渲染，以后即使你更换博客主题，也不会影响内容的展示。
- ```
- [pixiv: 41652582]: # "/IMAGES/bg/3.jpg"
-```
- 由于博客的文章、友链、书单、关于、心情等内容都放在 issues 里，所以需要对它们进行区分，这里主要使用 与 进行分类。`issues 状态``Labels`
- 
- 首先需要规定的是**文章的 issues 状态都是 `open` 的，友链、书单、关于、心情页面的 issues 内容都是 `closed` 状态的**。
- 
- 新建文章的时候 表示文章标签， 代表文章的分类，同时在文章正文顶部使用 markdown 注释来设置文章封面图，如下所示：`Labels``Milestone`
- 
- ![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
- 
- 温馨提示：通过给正文图片预设尺寸可以获得更流畅的图片加载效果，尺寸设置形如 ，举个栗子：`?vw=1920&vh=1080`
- ```
- [预设尺寸](/IMAGES/bg.png?vw=1920&vh=1080)
-```
- ### 心情模板
- 注意心情 issues 状态是 的，且需要打上 的 Labels，其他不做约束。`closed``Inspiration`
- 
- ![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
- 
- ### 友链模板
- 友链页面使用空行做分割，内容示例如下：
- 
- ```
- ## 阁子
- 
- link: //newdee.cf/
- cover: //i.loli.net/2018/12/15/5c14f329b2c88.png
- avatar: //i.loli.net/2018/12/15/5c14f3299c639.jpg
- ```
- 
- ### 书单模板
- 书单页面使用空行做分割，内容示例如下：
- 
- ```
- ## ES6 标准入门
- 
- author: 阮一峰
- published: 2017-09-01
- progress: 正在阅读...
- rating: 5,
- postTitle: ES6 标准入门
- postLink: //chanshiyu.com/#/post/12
- cover: //chanshiyu.com/yoi/2019/ES6-标准入门.jpg
- link: //www.duokan.com/book/169714
- description: 柏林已经来了命令，阿尔萨斯和洛林的学校只许教 ES6 了...他转身朝着黑板，拿起一支粉笔，使出全身的力量，写了两个大字：“ES6 万岁！”（《最后一课》）。
- ```
- 
- ### 关于模板
- 关于页面以 拆分，其他不做约束。`## 段落`
- 
- ### 添加分类
- ![添加分类](https://github.com/o0v0/o0v0/blob/main/Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/image%20(6).png?raw=true)
- 
- ## 部署
- Aurora 2.0 添加一键部署功能，只需要编辑 ，配置自己的仓库和域名，之后命令行执行 ，即可自动打包并上传到指定仓库，将该仓库开启 功能即可在线访问。相关文档参考[自动部署](https://cli.vuejs.org/zh/guide/deployment.html#now)。`build.sh``./build.sh``Github Pages`
- 
- 尽情享受吧💦
+**更多详细内容请进入下列链接。**
+> https://docs.mcsmanager.com/zh_cn/
 
+### 所需docker内容
+> [!tip]
+>  mcsmanager-web   镜像
+>  
+>  mcsmanager-daemon   镜像
+
+下载至docker镜像
+![镜像](https://github.com/u0w0n/blog/blob/main/mcsm/docker1.png?raw=true)
+
+### web容器部署。
+
+选择mcsmanager-web镜像，并点击添加，进行容器部署。
+
+一共有以下选项，进行相应设计即可。
+
+容器名称，性能限制，开机自启
+
+文件夹路径，容器安装的路径
+
+网络，切换为host模式，后期不用进行网络设置。
+![web镜像](https://github.com/u0w0n/blog/blob/main/mcsm/docker2.png?raw=true)
+
+### daemon容器部署。
+
+选择mcsmanager-daemon镜像，并点击添加，进行容器部署。
+
+一共有以下选项，进行相应设计即可。
+
+容器名称，性能限制，开机自启
+
+文件夹路径，容器安装的路径
+
+网络，切换为host模式，后期不用进行网络设置。
+![daemon容器部署](https://github.com/u0w0n/blog/blob/main/mcsm/docker3.png?raw=true)
+
+### 下载Downloads for Minecraft Forge
+![](https://github.com/u0w0n/blog/blob/main/mcsm/foreg1.png?raw=true)
+
+### 将之前下载的安装文件解压获的文件。
+![解压](https://github.com/u0w0n/blog/blob/main/mcsm/foreg2.png?raw=true)
+
+
+### 将之前下载的安装文件放到解压的文件夹内。
+
+并双击运行。
+
+当运行程序出现安装窗口，选择第二个服务器方式运行，下面选择安装路径为之前解压文件内。
+
+当安装完成之后，获得以下文件。
+
+如果要正常运行的话，将此文件夹内的内存设置为自己需要的内存。
+
+删除 ＃ 并将内存改为8g
+
+保存，在后续的面板运行当中才能正常运行，否则的话会出现错误。
+
+并把这些所有文件全选，打包为zip格式文件。
+
+并为后续上传至面板运行做准备。
+
+以上所有基础打包文件完成，后续操作在面板进行。
+![安装文件](https://github.com/u0w0n/blog/blob/main/mcsm/foreg3.png?raw=true)
+
+### mscm第一次进入面板
+
+第一次进入面板会进行语言和账号设置，这里就不显示了。
+
+进入面板之后，首先先创建节点。
+
+这是后续所有服务的主要重点，如果不设置，后续将无法使用。
+
+备注信息按自己喜欢的填入。
+
+IP地址为nas的ipv4地址，这也是为什么在进行网络设置时设置为host特模式，后续不用进行过多设置。
+
+下列端口号是mcsm的后端服务地址，不用改，如果你修改了的话，就按自己的填写。
+
+节点秘钥，在部署mcsm的后端服务时在容器日志那理查看
+
+秘钥为:  Access Key: 一长串代码，记得在部署完后端之后立即查看日志，将其复制下来。
+
+点击确定后显示为左边样式，如果出现异常，则填写错误
+![进入面板](https://github.com/u0w0n/blog/blob/main/mcsm/mcsm1.png?raw=true)
+
+### 上传服务器文件
+上传服务器文件，选择导入压缩包模式。
+
+会选择一个节点，就是刚刚设置的那个。
+
+然后进行实例的信息填写。
+
+名称按自己需要。
+
+实例类型，自己是什么版本就选择那个，我是forge就选forge。
+
+启动命令，sh run.sh
+
+文件目录，在部署daemon后端容器时选择的目录
+
+选择之前打包好的服务器zip文件
+
+会让你选择解压编码，我这里是用的win环境打包的，所以选择gbk
+
+点击确认后进行上传文件。
+![上传服务器文件](https://github.com/u0w0n/blog/blob/main/mcsm/mcsm2.png?raw=true)
+
+### minecraft状态获取
+上传完成之后，选择你上传的应用实例，先不要着急启动，先吧minecraft状态获取这理吧服务器地址填上，即nas的ipv4地址
+
+以上步骤完成之后，点击启动。
+
+会进行10分钟以内的代码运行，如果超时代码没结束，不要管它，等它继续运行
+
+当出现Done (10.575s)！For help，type "help"这行代码时就表示启动完成。
+
+
+当以上所有操作完成之后，启动mc启动器并安装相应版本，进入游戏后，在多人游戏里可以看到一个本地为IP V6地址的服务器，可以点击此服务器加入进去即可，或者用nas的地址加上minecraft状态获取处设置的端口，进入服务器。
+![minecraft状态获取](https://github.com/u0w0n/blog/blob/main/mcsm/mscm3.png?raw=true)
