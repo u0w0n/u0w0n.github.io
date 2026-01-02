@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>日常</title><link>https://i-v-i.cn/</link><description>我们所度过的每个平凡的日常，也许就是连续发生的奇迹~</description><copyright>日常</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic2.ziyuan.wang/user/0w0/2025/10/we_1738847656219_d8474ba50c632.gif</url><title>avatar</title><link>https://i-v-i.cn/</link></image><lastBuildDate>Fri, 02 Jan 2026 14:16:28 +0000</lastBuildDate><managingEditor>日常</managingEditor><ttl>60</ttl><webMaster>日常</webMaster><item><title>极空间安装typecho - 食用指南</title><link>https://i-v-i.cn//post/9.html</link><description>&lt;!-- ##{'script':'&lt;script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'&gt;&lt;/script&gt;&lt;script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'&gt;&lt;/script&gt;'}## --&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>日常</title><link>https://i-v-i.cn/</link><description>我们所度过的每个平凡的日常，也许就是连续发生的奇迹~</description><copyright>日常</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic2.ziyuan.wang/user/0w0/2025/10/we_1738847656219_d8474ba50c632.gif</url><title>avatar</title><link>https://i-v-i.cn/</link></image><lastBuildDate>Fri, 02 Jan 2026 14:20:22 +0000</lastBuildDate><managingEditor>日常</managingEditor><ttl>60</ttl><webMaster>日常</webMaster><item><title>极空间安装typecho - 食用指南</title><link>https://i-v-i.cn//post/9.html</link><description>&lt;!-- ##{'script':'&lt;script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'&gt;&lt;/script&gt;&lt;script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'&gt;&lt;/script&gt;'}## --&gt;
 
 #### 小白也能轻松搞定的极空间docker安装/typecho
 Typecho 是一个轻量级的博客平台，旨在提供简洁高效的写作体验。</description><guid isPermaLink="true">https://i-v-i.cn//post/9.html</guid><pubDate>Mon, 27 Oct 2025 06:41:13 +0000</pubDate></item><item><title>极空间安装mysql - 食用指南</title><link>https://i-v-i.cn//post/7.html</link><description>&lt;!-- ##{'script':'&lt;script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'&gt;&lt;/script&gt;&lt;script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'&gt;&lt;/script&gt;'}## --&gt;
@@ -32,11 +32,11 @@ _**需要注意的一点是，并不是所有的服务器都支持部署。</des
 
 | 日常 | 我的音乐 |
 |--------|--------|
-| 网易音乐 | https://blog.eeffan.cn/HeoMusic/ |
+| 网易音乐 | https://i-v-i.cn/HeoMusic/ |
 
 | 日常 | 我的rss |
 |--------|--------|
-| 博客rss | https://blog.eeffan.cn//rss.xml |
+| 博客rss | https://i-v-i.cn/rss.xml |
 。</description><guid isPermaLink="true">https://i-v-i.cn//link.html</guid><pubDate>Thu, 06 Feb 2025 05:34:59 +0000</pubDate></item><item><title>平凡的日常</title><link>https://i-v-i.cn//about.html</link><description>&lt;a href=''&gt;&lt;img align='right' alt='Github stats' src='https://camo.githubusercontent.com/0247707c1db43f0257127fd2b125ae627f4557bc6f1a046f5aa477732dbfdacd/68747470733a2f2f706963322e7a697975616e2e77616e672f757365722f3077302f323032342f30372f7265696d755f656132636135663663646432642e706e673f7261773d74727565'/&gt;&lt;/a&gt;
 
 &lt;p align='center'&gt;
