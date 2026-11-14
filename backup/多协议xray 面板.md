@@ -76,3 +76,4 @@ _**需要注意的一点是，并不是所有的服务器都支持部署。**_
  
 下载链接：https://docs.microsoft.com/zh-cn/dotnet/framework/install/guide-for-developers
 
+`因为我的设备是极空间z4pro，所以所有操作都在这个设备上进行。`
