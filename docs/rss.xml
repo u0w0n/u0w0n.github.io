@@ -1,16 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>日常</title><link>https://i-v-i.cn/</link><description>我们所度过的每个平凡的日常，也许就是连续发生的奇迹~</description><copyright>日常</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.aigei.com/src/img/gif/3f/3f658f021d01411fb19beaf67c9b08ef.gif?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&amp;e=2051020800&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:X16MWAdBfd3bhWk6q4O58P34Rpc=</url><title>avatar</title><link>https://i-v-i.cn/</link></image><lastBuildDate>Sun, 22 Nov 2026 08:16:57 +0000</lastBuildDate><managingEditor>日常</managingEditor><ttl>60</ttl><webMaster>日常</webMaster><item><title>MMD-YBK杂志社</title><link>https://i-v-i.cn//post/12.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>日常</title><link>https://i-v-i.cn/</link><description>我们所度过的每个平凡的日常，也许就是连续发生的奇迹~</description><copyright>日常</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.aigei.com/src/img/gif/3f/3f658f021d01411fb19beaf67c9b08ef.gif?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&amp;e=2051020800&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:X16MWAdBfd3bhWk6q4O58P34Rpc=</url><title>avatar</title><link>https://i-v-i.cn/</link></image><lastBuildDate>Sun, 22 Nov 2026 08:18:36 +0000</lastBuildDate><managingEditor>日常</managingEditor><ttl>60</ttl><webMaster>日常</webMaster><item><title>MMD-YBK杂志社</title><link>https://i-v-i.cn//post/12.html</link><description>
 &gt; 本文由 [MMD杂志社](https://mmdybk.vercel.app/) 
 
 MMD杂志社，成立于2018年夏，是民间爱好者组成的非盈利组织
 
 本站通过搜集专栏和接收稿件，供各位热爱MMD的小可爱们翻阅查看
 
-推荐使用PC浏览器，以获得最佳体验。</description><guid isPermaLink="true">https://i-v-i.cn//post/12.html</guid><pubDate>Sun, 22 Nov 2026 08:13:51 +0000</pubDate></item><item><title>MMD杂志社</title><link>https://i-v-i.cn//post/11.html</link><description>MMD杂志社，成立于2018年夏，是民间爱好者组成的非盈利组织
-
-本站通过搜集专栏和接收稿件，供各位热爱MMD的小可爱们翻阅查看
-
-推荐使用PC浏览器，以获得最佳体验。</description><guid isPermaLink="true">https://i-v-i.cn//post/11.html</guid><pubDate>Sun, 22 Nov 2026 08:12:56 +0000</pubDate></item><item><title>极空间部署AstrBot助手</title><link>https://i-v-i.cn//post/10.html</link><description>![](https://ai-bot.cn/wp-content/uploads/2025/02/AstrBot-website.png)
+推荐使用PC浏览器，以获得最佳体验。</description><guid isPermaLink="true">https://i-v-i.cn//post/12.html</guid><pubDate>Sun, 22 Nov 2026 08:13:51 +0000</pubDate></item><item><title>极空间部署AstrBot助手</title><link>https://i-v-i.cn//post/10.html</link><description>![](https://ai-bot.cn/wp-content/uploads/2025/02/AstrBot-website.png)
 
 
 &gt;AstrBot 是一个跨平台 AI 助手，让 AI 直接工作在你的聊天软件中，实现自动化任务与智能协作，同时提供灵活的 Agent 编排能力。</description><guid isPermaLink="true">https://i-v-i.cn//post/10.html</guid><pubDate>Sun, 08 Nov 2026 09:04:38 +0000</pubDate></item><item><title>极空间安装typecho</title><link>https://i-v-i.cn//post/9.html</link><description>&lt;!-- ##{'script':'&lt;script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'&gt;&lt;/script&gt;&lt;script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'&gt;&lt;/script&gt;'}## --&gt;
