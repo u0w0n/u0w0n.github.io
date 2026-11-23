@@ -1,4 +1,7 @@
-### 《我的世界》（Minecraft）是一款由Mojang Studios开发的沙盒类电子游戏，玩家可以在一个由方块构成的三维世界中自由创造和探索。
+<!-- ##{"script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>"}## -->
+
+### 《我的世界》
+（Minecraft）是一款由Mojang Studios开发的沙盒类电子游戏，玩家可以在一个由方块构成的三维世界中自由创造和探索。
 ### 游戏概述
 《我的世界》是一款开放世界的沙盒游戏，玩家在游戏中可以自由地创造和破坏各种方块，构建建筑、艺术作品，或进行探险。游戏没有固定的目标，玩家可以选择单人模式或多人模式进行游戏。自2009年首次发布以来，该游戏已经成为全球最畅销的电子游戏之一，销量超过亿份。 
 ### 玩法特点
