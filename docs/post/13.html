@@ -10,12 +10,10 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="<a href=''><img align='right' alt='Github stats' src='https://pic2.ziyuan.wang/user/0w0/2024/07/reimu_ea2ca5f6cdd2d.png'/></a>
-###  一、写在前面
+<meta name="description" content="###  一、写在前面
 极空间在 24 年 12 月份全量开启了 SSH 权限之后，大家还是很沸腾的，但是玩来玩去这个真实路径是真玩不明白，极大影响了我们部署堆栈使用 portainer 等等管理容器，今天重点给兄弟们讲解一下极空间的目录逻辑，大家以后修改堆栈参数的时候就思路很清晰了。">
 <meta property="og:title" content="搞懂极空间映射目录关系">
-<meta property="og:description" content="<a href=''><img align='right' alt='Github stats' src='https://pic2.ziyuan.wang/user/0w0/2024/07/reimu_ea2ca5f6cdd2d.png'/></a>
-###  一、写在前面
+<meta property="og:description" content="###  一、写在前面
 极空间在 24 年 12 月份全量开启了 SSH 权限之后，大家还是很沸腾的，但是玩来玩去这个真实路径是真玩不明白，极大影响了我们部署堆栈使用 portainer 等等管理容器，今天重点给兄弟们讲解一下极空间的目录逻辑，大家以后修改堆栈参数的时候就思路很清晰了。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://i-v-i.cn//post/13.html">
@@ -77,9 +75,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p><a href=""><img align="right" alt="Github stats" src="https://camo.githubusercontent.com/ed30e9b78812d6aea6ae20aaa15919d0845b6588d5610f83c0ecb525ad63bd35/68747470733a2f2f706963322e7a697975616e2e77616e672f757365722f3077302f323032342f30372f7265696d755f656132636135663663646432642e706e67" data-canonical-src="https://pic2.ziyuan.wang/user/0w0/2024/07/reimu_ea2ca5f6cdd2d.png" style="max-width: 100%;"></a></p>
-<h3>一、写在前面</h3>
-<p>极空间在 24 年 12 月份全量开启了 SSH 权限之后，大家还是很沸腾的，但是玩来玩去这个真实路径是真玩不明白，极大影响了我们部署堆栈使用 portainer 等等管理容器，今天重点给兄弟们讲解一下极空间的目录逻辑，大家以后修改堆栈参数的时候就思路很清晰了。</p>
+<div class="markdown-body" id="postBody"><h3>一、写在前面</h3>
+<p>极空间在 24 年 12 月份全量开启了 SSH 权限之后，大家还是很沸腾的，但是玩来玩去这个真实路径是真玩不明白，极大影响了我们部署堆栈使用 portainer 等等管理容器，今天重点给兄弟们讲解一下极空间的目录逻辑，大家以后修改堆栈参数的时候就思路很清晰了。<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/fa03e1c383fd33aa7fea6d6ba6298fbd6a660a4db47815912f90f71668c4aba2/68747470733a2f2f696d672e7a636f6e6e6563742e636e2f686f6d65323032352f70632f686f6d652d5a3450726f5f6a5f342e706e67"><img src="https://camo.githubusercontent.com/fa03e1c383fd33aa7fea6d6ba6298fbd6a660a4db47815912f90f71668c4aba2/68747470733a2f2f696d672e7a636f6e6e6563742e636e2f686f6d65323032352f70632f686f6d652d5a3450726f5f6a5f342e706e67" alt="" data-canonical-src="https://img.zconnect.cn/home2025/pc/home-Z4Pro_j_4.png" style="max-width: 100%;"></a></p>
 <h4>二、Docker 的映射路径和真实路径解释</h4>
 <p>Docker项目 就是一个独立的容器，这个容器有自己的文件目录（文件路径）而映射路径就是这个Docker容器的文件目录（文件路径）之间的 ” 数据传送门 ”<br>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2ac70b38d9ff4065fa6573de7fdc2f762f5c2d4e4fa1aca7f7e3a2f7e787959d/68747470733a2f2f697a73706163652e636e2f77702d636f6e74656e742f75706c6f6164732f323032352f30332f70616e2d373638783232392e6a7067"><img src="https://camo.githubusercontent.com/2ac70b38d9ff4065fa6573de7fdc2f762f5c2d4e4fa1aca7f7e3a2f7e787959d/68747470733a2f2f697a73706163652e636e2f77702d636f6e74656e742f75706c6f6164732f323032352f30332f70616e2d373638783232392e6a7067" alt="极空间路径结构示意图" data-canonical-src="https://izspace.cn/wp-content/uploads/2025/03/pan-768x229.jpg" style="max-width: 100%;"></a><br>
