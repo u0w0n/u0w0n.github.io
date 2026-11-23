@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>日常</title><link>https://i-v-i.cn/</link><description>我们所度过的每个平凡的日常，也许就是连续发生的奇迹~</description><copyright>日常</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.aigei.com/src/img/gif/3f/3f658f021d01411fb19beaf67c9b08ef.gif?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&amp;e=2051020800&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:X16MWAdBfd3bhWk6q4O58P34Rpc=</url><title>avatar</title><link>https://i-v-i.cn/</link></image><lastBuildDate>Mon, 23 Nov 2026 02:15:23 +0000</lastBuildDate><managingEditor>日常</managingEditor><ttl>60</ttl><webMaster>日常</webMaster><item><title>搞懂极空间映射目录关系</title><link>https://i-v-i.cn//post/13.html</link><description>###  一、写在前面
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>日常</title><link>https://i-v-i.cn/</link><description>我们所度过的每个平凡的日常，也许就是连续发生的奇迹~</description><copyright>日常</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.aigei.com/src/img/gif/3f/3f658f021d01411fb19beaf67c9b08ef.gif?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&amp;e=2051020800&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:X16MWAdBfd3bhWk6q4O58P34Rpc=</url><title>avatar</title><link>https://i-v-i.cn/</link></image><lastBuildDate>Mon, 23 Nov 2026 02:18:32 +0000</lastBuildDate><managingEditor>日常</managingEditor><ttl>60</ttl><webMaster>日常</webMaster><item><title>搞懂极空间映射目录关系</title><link>https://i-v-i.cn//post/13.html</link><description>###  一、写在前面
 极空间在 24 年 12 月份全量开启了 SSH 权限之后，大家还是很沸腾的，但是玩来玩去这个真实路径是真玩不明白，极大影响了我们部署堆栈使用 portainer 等等管理容器，今天重点给兄弟们讲解一下极空间的目录逻辑，大家以后修改堆栈参数的时候就思路很清晰了。</description><guid isPermaLink="true">https://i-v-i.cn//post/13.html</guid><pubDate>Mon, 23 Nov 2026 01:39:28 +0000</pubDate></item><item><title>MMD-YBK杂志社</title><link>https://i-v-i.cn//post/12.html</link><description>
 &gt; 本文由 [MMD杂志社](https://mmdybk.vercel.app/) 
 
@@ -54,8 +54,6 @@ _**需要注意的一点是，并不是所有的服务器都支持部署。</des
 &lt;p align='center'&gt;
 我们所度过的每个平凡的日常，也许就是连续发生的奇迹~
 &lt;/a&gt;&lt;/p&gt;
-
-`Gmeek-html&lt;iframe style='border-radius:12px' src='https://music.163.com/outchain/player?type=2&amp;id=2130799231?utm_source=generator' width='100%' height='152' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'&gt;&lt;/iframe&gt;`
 
 `Gmeek-html&lt;iframe src='https://i-v-i.cn/HeoMusic/' width='100%' height='460px' frameborder='0' allowfullscreen='true'&gt;&lt;/iframe&gt;`
 
