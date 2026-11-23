@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark_colorblind" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>
+    <link rel="icon" href="https://pic2.ziyuan.wang/user/0w0/2024/09/ri_d8a069a00605f.png"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="###  一、写在前面
+极空间在 24 年 12 月份全量开启了 SSH 权限之后，大家还是很沸腾的，但是玩来玩去这个真实路径是真玩不明白，极大影响了我们部署堆栈使用 portainer 等等管理容器，今天重点给兄弟们讲解一下极空间的目录逻辑，大家以后修改堆栈参数的时候就思路很清晰了。">
+<meta property="og:title" content="搞懂极空间映射目录">
+<meta property="og:description" content="###  一、写在前面
+极空间在 24 年 12 月份全量开启了 SSH 权限之后，大家还是很沸腾的，但是玩来玩去这个真实路径是真玩不明白，极大影响了我们部署堆栈使用 portainer 等等管理容器，今天重点给兄弟们讲解一下极空间的目录逻辑，大家以后修改堆栈参数的时候就思路很清晰了。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://i-v-i.cn//post/13.html">
+<meta property="og:image" content="https://s1.aigei.com/src/img/gif/3f/3f658f021d01411fb19beaf67c9b08ef.gif?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&e=2051020800&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:X16MWAdBfd3bhWk6q4O58P34Rpc=">
+<title>搞懂极空间映射目录</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">搞懂极空间映射目录</h1>
+<div class="title-right">
+    <a href="https://i-v-i.cn/" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/u0w0n/u0w0n.github.io/issues/13" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h3>一、写在前面</h3>
+<p>极空间在 24 年 12 月份全量开启了 SSH 权限之后，大家还是很沸腾的，但是玩来玩去这个真实路径是真玩不明白，极大影响了我们部署堆栈使用 portainer 等等管理容器，今天重点给兄弟们讲解一下极空间的目录逻辑，大家以后修改堆栈参数的时候就思路很清晰了。</p>
+<h4>二、Docker 的映射路径和真实路径解释</h4>
+<p>Docker项目 就是一个独立的容器，这个容器有自己的文件目录（文件路径）。而映射路径就是这个Docker容器的文件目录（文件路径）之间的 ” 数据传送门 ”，让你电脑上的SSH软件和容器里的文件夹可以互通。<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2ac70b38d9ff4065fa6573de7fdc2f762f5c2d4e4fa1aca7f7e3a2f7e787959d/68747470733a2f2f697a73706163652e636e2f77702d636f6e74656e742f75706c6f6164732f323032352f30332f70616e2d373638783232392e6a7067"><img src="https://camo.githubusercontent.com/2ac70b38d9ff4065fa6573de7fdc2f762f5c2d4e4fa1aca7f7e3a2f7e787959d/68747470733a2f2f697a73706163652e636e2f77702d636f6e74656e742f75706c6f6164732f323032352f30332f70616e2d373638783232392e6a7067" alt="极空间路径结构示意图" data-canonical-src="https://izspace.cn/wp-content/uploads/2025/03/pan-768x229.jpg" style="max-width: 100%;"></a><br>
+如上图<br>
+/tmp/zfsv3/sata14/185xxxxxxxx/data/ 影视 / 电影<br>
+看懂上面这个图你就能直接在 SSH 中找到你要的文件路径了。</p>
+<p>另一个例子<br>
+/tmp/zfsv3/nvme13/185xxxxxxxx/data/Docker/jellyfin<br>
+特别之处，机械硬盘的路径显示是 sata，而固态硬盘则显示为 nvme，掌握这个点你就能轻松找到 docker 文件路径啦。<br>
+<code class="notranslate">真实路径是宿主机磁盘上的目录，映射路径是容器内的挂载点；映射把两者绑定，容器读写映射路径 = 读写宿主机真实路径。</code></p>
+<h4>三、为什么需要这个功能？</h4>
+<p>数据持久化：容器删除后，数据不会丢失（因为实际存在主机上）<br>
+方便开发：可以直接用主机上的编辑器修改代码，容器内立即生效<br>
+共享数据：多个容器可以共享同一个主机目录</p>
+<h4>四、映射路径举例</h4>
+<p>在极空间 docker 中显示如下图<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/a15874ba802f1ed13a643437a46d2cddb9f150da799894275c0b3280556b90fe/68747470733a2f2f697a73706163652e636e2f77702d636f6e74656e742f75706c6f6164732f323032352f30332f3132742e6a7067"><img src="https://camo.githubusercontent.com/a15874ba802f1ed13a643437a46d2cddb9f150da799894275c0b3280556b90fe/68747470733a2f2f697a73706163652e636e2f77702d636f6e74656e742f75706c6f6164732f323032352f30332f3132742e6a7067" alt="映射路径" data-canonical-src="https://izspace.cn/wp-content/uploads/2025/03/12t.jpg" style="max-width: 100%;"></a><br>
+极空间开启 SSH 不会用？一文搞懂极空间文件映射目录<br>
+而且 SSH 中这两个目录则显示为<code class="notranslate">/tmp/zfsv3/sata14/185xxxxxxxx/data:/12T</code><br>
+上面这个路径中<code class="notranslate">/tmp/zfsv3/sata14/185xxxxxxxx/data</code>在我自己的极空间中我命名这个硬盘为 12T（因此图中显示 12T），而后面的 /12T 则是容器中显示的名字，如果你修改为 / 影视库 则在容器中的路径（比如让你选择路径的时候）就显示为影视库，你就明白它对应的就是你极空间这个命名为 12T 的硬盘，也对应在 SSH 中的这个路径<code class="notranslate">/tmp/zfsv3/sata14/185xxxxxxxx/data</code> 的文件夹。</p>
+<p><strong>另一种经常见到的特殊路径</strong><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c20082f8ee67cea89e7167efd7983aefde3e08d4f8f197d38cb54d2a57a7f2c5/68747470733a2f2f697a73706163652e636e2f77702d636f6e74656e742f75706c6f6164732f323032352f30332f736f636b2e6a7067"><img src="https://camo.githubusercontent.com/c20082f8ee67cea89e7167efd7983aefde3e08d4f8f197d38cb54d2a57a7f2c5/68747470733a2f2f697a73706163652e636e2f77702d636f6e74656e742f75706c6f6164732f323032352f30332f736f636b2e6a7067" alt="映射路径" data-canonical-src="https://izspace.cn/wp-content/uploads/2025/03/sock.jpg" style="max-width: 100%;"></a><br>
+<code class="notranslate">/var/run/docker.sock:/var/run/docker.sock</code>这个映射就像是给 Docker 容器开了一个 ” 后门权限 ”<br>
+<strong>实际作用</strong><br>
+这样映射后，容器内可以：<br>
+查看主机上运行的其他容器（就像查看商场里所有店铺）<br>
+启动 / 停止其他容器（就像开关其他店铺）<br>
+管理 Docker 镜像（就像管理商品库存）</p>
+<p><strong>安全提示</strong><br>
+这相当于给了容器很高的权限，就像：<br>
+给店铺员工配了商场总管理卡<br>
+只有你完全信任的容器才该这样配置<br>
+恶意程序拿到这个权限可能搞破坏</p>
+<p><strong>常见用途</strong><br>
+监控工具：如 Portainer（Docker 管理界面）还有 sun-panel 等容器都是这个映射路径<br>
+CI/CD 工具：如 Jenkins 容器需要管理其他容器<br>
+开发工具：需要与 Docker 交互的调试工具</p>
+<h3>简单总结</h3>
+<p>让这个容器获得管理主机上所有 Docker 的权限除非必要，否则不要随便给容器这个权限哦！就像你不会随便把<code class="notranslate">家门钥匙给别人</code>一样~</p></div>
+<div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://i-v-i.cn/">日常</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("09/16/2024"!=""){
+    var startSite=new Date("09/16/2024");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","u0w0n/u0w0n.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>document.getElementById('cmButton').click();</script>
+
+</html>
