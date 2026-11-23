@@ -78,8 +78,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="markdown-body" id="postBody"><h3>一、写在前面</h3>
 <p>极空间在 24 年 12 月份全量开启了 SSH 权限之后，大家还是很沸腾的，但是玩来玩去这个真实路径是真玩不明白，极大影响了我们部署堆栈使用 portainer 等等管理容器，今天重点给兄弟们讲解一下极空间的目录逻辑，大家以后修改堆栈参数的时候就思路很清晰了。</p>
 <h4>二、Docker 的映射路径和真实路径解释</h4>
-<p>Docker项目 就是一个独立的容器，这个容器有自己的文件目录（文件路径）。而映射路径就是这个Docker容器的文件目录（文件路径）之间的 ” 数据传送门 ”，让你电脑上的SSH软件和容器里的文件夹可以互通。<br>
+<p>Docker项目 就是一个独立的容器，这个容器有自己的文件目录（文件路径）而映射路径就是这个Docker容器的文件目录（文件路径）之间的 ” 数据传送门 ”<br>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2ac70b38d9ff4065fa6573de7fdc2f762f5c2d4e4fa1aca7f7e3a2f7e787959d/68747470733a2f2f697a73706163652e636e2f77702d636f6e74656e742f75706c6f6164732f323032352f30332f70616e2d373638783232392e6a7067"><img src="https://camo.githubusercontent.com/2ac70b38d9ff4065fa6573de7fdc2f762f5c2d4e4fa1aca7f7e3a2f7e787959d/68747470733a2f2f697a73706163652e636e2f77702d636f6e74656e742f75706c6f6164732f323032352f30332f70616e2d373638783232392e6a7067" alt="极空间路径结构示意图" data-canonical-src="https://izspace.cn/wp-content/uploads/2025/03/pan-768x229.jpg" style="max-width: 100%;"></a><br>
+<code class="notranslate">电脑上用SSH软件能和容器里的文件夹互通</code><br>
 如上图<br>
 /tmp/zfsv3/sata14/185xxxxxxxx/data/ 影视 / 电影<br>
 看懂上面这个图你就能直接在 SSH 中找到你要的文件路径了。</p>
