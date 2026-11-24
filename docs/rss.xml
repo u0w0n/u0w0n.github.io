@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>日常</title><link>https://i-v-i.cn/</link><description>我们所度过的每个平凡的日常，也许就是连续发生的奇迹~</description><copyright>日常</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.aigei.com/src/img/gif/2d/2d6dd09ecb6d4c469c9c4842f08b2e2f.gif?imageMogr2/auto-orient/thumbnail/!191x132r/gravity/Center/crop/191x132/quality/85/%7CimageView2/2/w/191&amp;e=2051020800&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:L3Jjh42neVXuRjESfAk8pGhAYh0=</url><title>avatar</title><link>https://i-v-i.cn/</link></image><lastBuildDate>Tue, 24 Nov 2026 04:38:53 +0000</lastBuildDate><managingEditor>日常</managingEditor><ttl>60</ttl><webMaster>日常</webMaster><item><title>搞懂极空间映射目录关系</title><link>https://i-v-i.cn//post/13.html</link><description>###  一、写在前面
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>日常</title><link>https://i-v-i.cn/</link><description>我们所度过的每个平凡的日常，也许就是连续发生的奇迹~</description><copyright>日常</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.aigei.com/src/img/gif/2d/2d6dd09ecb6d4c469c9c4842f08b2e2f.gif?imageMogr2/auto-orient/thumbnail/!191x132r/gravity/Center/crop/191x132/quality/85/%7CimageView2/2/w/191&amp;e=2051020800&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:L3Jjh42neVXuRjESfAk8pGhAYh0=</url><title>avatar</title><link>https://i-v-i.cn/</link></image><lastBuildDate>Tue, 24 Nov 2026 04:42:30 +0000</lastBuildDate><managingEditor>日常</managingEditor><ttl>60</ttl><webMaster>日常</webMaster><item><title>搞懂极空间映射目录关系</title><link>https://i-v-i.cn//post/13.html</link><description>###  一、写在前面
 极空间在 24 年 12 月份全量开启了 SSH 权限之后，大家还是很沸腾的，但是玩来玩去这个真实路径是真玩不明白，极大影响了我们部署堆栈使用 portainer 等等管理容器，今天重点给兄弟们讲解一下极空间的目录逻辑，大家以后修改堆栈参数的时候就思路很清晰了。</description><guid isPermaLink="true">https://i-v-i.cn//post/13.html</guid><pubDate>Mon, 23 Nov 2026 01:39:28 +0000</pubDate></item><item><title>MMD-YBK杂志社</title><link>https://i-v-i.cn//post/12.html</link><description>
 &gt; 本文由 [MMD杂志社](https://mmdybk.vercel.app/) 
 
@@ -23,15 +23,14 @@ Typecho 是一个轻量级的博客平台，旨在提供简洁高效的写作体
 
 ![我身处俗世 昨日如观花](https://img-blog.csdnimg.cn/0c906ff8cf784461ad59a236f7cf6a35.png) 
 
-_**需要注意的一点是，并不是所有的服务器都支持部署。</description><guid isPermaLink="true">https://i-v-i.cn//post/1.html</guid><pubDate>Thu, 06 Feb 2025 05:15:02 +0000</pubDate></item><item><title>互联网邻居</title><link>https://i-v-i.cn//link.html</link><description>```
+_**需要注意的一点是，并不是所有的服务器都支持部署。</description><guid isPermaLink="true">https://i-v-i.cn//post/1.html</guid><pubDate>Thu, 06 Feb 2025 05:15:02 +0000</pubDate></item><item><title>互联网邻居</title><link>https://i-v-i.cn//link.html</link><description>![](https://pic2.ziyuan.wang/user/0w0/2025/10/ee_f646d70ebea79.png)
+
 - name: 日常
 - uri: u0w0n.github.io
 - avatar: https://pic2.ziyuan.wang/user/0w0/2024/09/ri_d8a069a00605f.png
 - desc: 我们所度过的每个平凡的日常，也许就是连续发生的奇迹~
-```
-```
-申请前记得先添加本站哦~
-```
+- desc: `申请前记得先添加本站哦~`
+
 
 -----------------------
 
